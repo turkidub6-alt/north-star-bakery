@@ -382,3 +382,19 @@ footer p {
     min-width: 250px;
   }
 }
+
+/* Touchstone 4: interactive favorites and inline validation */
+.favorite-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: 1rem 0; }
+.favorite-actions select { width: auto; max-width: 100%; }
+.favorite-products { display: flex; flex-wrap: wrap; gap: 1rem; }
+.favorite-card { flex: 1 1 100%; border: 1px solid #EADBCE; border-radius: 6px; padding: 1rem; }
+.favorite-card h3 { margin-top: 0; color: #4A2E18; }
+button[type="button"] { background: #4A2E18; color: #FFFFFF; border: 2px solid #4A2E18; border-radius: 6px; padding: .65rem 1rem; min-height: 44px; font: inherit; cursor: pointer; }
+button[aria-pressed="true"] { background: #FAF6F0; color: #4A2E18; }
+button:disabled { opacity: .6; cursor: default; }
+button:focus-visible { outline: 3px solid #4A2E18; outline-offset: 3px; }
+.field-error { color: #4A2E18; font-weight: 700; margin-top: .35rem; }
+[aria-invalid="true"] { border: 2px solid #4A2E18 !important; }
+#favorites-summary, #form-summary { font-weight: 700; }
+#request-review:empty, .field-error:empty { display: none; }
+@media (min-width: 768px) { .favorite-card { flex-basis: calc(33.333% - 1rem); } }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery - Artisan Breads, Pastries &amp; Cakes</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <header>
@@ -23,6 +24,29 @@
   <main>
     <h1>Our Freshly Baked Bakery Selection</h1>
     <p>Explore our complete offerings of artisan sourdough loaves, morning breakfast pastries, and custom occasion cakes. All items are baked from scratch daily in limited quantities using certified organic grains and pure ingredients. No online checkout is required&mdash;simply reserve your favorites in advance on our contact page for easy in-store pickup.</p>
+
+
+    <section id="favorites-feature" aria-labelledby="favorites-heading">
+      <h2 id="favorites-heading">Save Your Bakery Favorites</h2>
+      <p>Save items for your next visit. Your favorites stay in this browser; saving an item does not place an order.</p>
+      <div class="favorite-actions">
+        <label for="product-category">Browse category</label>
+        <select id="product-category">
+          <option value="all">All categories</option>
+          <option value="bread">Breads</option>
+          <option value="pastry">Pastries</option>
+          <option value="cake">Cakes</option>
+        </select>
+        <button type="button" id="clear-favorites">Clear favorites</button>
+      </div>
+      <p id="favorites-summary" role="status" aria-live="polite"></p>
+      <p id="storage-status" role="status"></p>
+      <div id="favorite-products" class="favorite-products"></div>
+      <h3>Your saved list</h3>
+      <ul id="saved-favorites"></ul>
+      <p><a href="contact.html">Ask about availability or request a pre-order</a></p>
+      <noscript>Enable JavaScript to save favorites. The full product list below remains available.</noscript>
+    </section>
 
     <section>
       <h2>Artisan Breads (Price Range: $4.50 &ndash; $10.00)</h2>

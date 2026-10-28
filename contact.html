@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery - Inquiry &amp; Pre-Order Request Form</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <header>
@@ -25,12 +26,14 @@
 
     <section>
       <h2>Inquiry and Pre-Order Guidelines</h2>
-      <p>Because all of our sourdough breads undergo a slow 24 to 36-hour wild fermentation, daily baking quantities are limited. Submitting an advance request guarantees that your favorite loaves and pastry boxes are reserved and packed fresh for you. Please submit all pre-orders at least 24 hours in advance (48 hours for specialty cakes). We will confirm your request via email within 2 business hours.</p>
+      <p>Because all of our sourdough breads undergo a slow 24 to 36-hour wild fermentation, daily baking quantities are limited. An advance inquiry helps you plan a pickup; availability and reservations must be confirmed directly with the bakery. Please submit all pre-orders at least 24 hours in advance (48 hours for specialty cakes). This student website demonstrates a request form and does not transmit requests to the bakery.</p>
     </section>
 
     <section>
       <h2>Inquiry &amp; Pre-Order Request Form</h2>
-      <form action="submit-request.html" method="post">
+      <form id="inquiry-form" action="contact.html" method="post">
+        <p id="form-summary" role="status" aria-live="polite"></p>
+        <p>This demonstration checks your request locally. It does not send an email or reserve products.</p>
         <fieldset>
           <legend>Customer Information</legend>
           <p>
@@ -62,7 +65,7 @@
           </p>
           <p>
             <label for="pickup-date">Requested Pickup Date (Required for orders):</label><br>
-            <input type="date" id="pickup-date" name="pickupDate" required min="2026-10-28">
+            <input type="date" id="pickup-date" name="pickupDate">
           </p>
           <p>
             <label for="pickup-window">Preferred Pickup Window:</label><br>
@@ -83,9 +86,11 @@
         </fieldset>
 
         <p>
-          <button type="submit">Submit Request</button>
+          <button type="submit" disabled>Review Request</button>
+          <noscript>Enable JavaScript to validate and review this demonstration form.</noscript>
         </p>
       </form>
+      <div id="request-review" role="status" aria-live="polite"></div>
     </section>
 
     <section>
