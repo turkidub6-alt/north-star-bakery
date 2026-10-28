@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Star Bakery - Inquiry &amp; Pre-Order Request Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="bakery-logo.png" alt="North Star Bakery logo showing a rustic hearth bread loaf and wheat stalk">
+    <p>Neighborhood Hearth Bakery &bull; Organic Grains &bull; Baked Fresh Daily</p>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us &amp; Bakery Pre-Order Request</h1>
+
+    <section>
+      <h2>Inquiry and Pre-Order Guidelines</h2>
+      <p>Because all of our sourdough breads undergo a slow 24 to 36-hour wild fermentation, daily baking quantities are limited. Submitting an advance request guarantees that your favorite loaves and pastry boxes are reserved and packed fresh for you. Please submit all pre-orders at least 24 hours in advance (48 hours for specialty cakes). We will confirm your request via email within 2 business hours.</p>
+    </section>
+
+    <section>
+      <h2>Inquiry &amp; Pre-Order Request Form</h2>
+      <form action="submit-request.html" method="post">
+        <fieldset>
+          <legend>Customer Information</legend>
+          <p>
+            <label for="customer-name">Full Name (Required):</label><br>
+            <input type="text" id="customer-name" name="customerName" required minlength="2" placeholder="e.g., Sarah Jenkins">
+          </p>
+          <p>
+            <label for="customer-email">Email Address (Required):</label><br>
+            <input type="email" id="customer-email" name="customerEmail" required placeholder="name@example.com">
+          </p>
+          <p>
+            <label for="customer-phone">Phone Number (Required):</label><br>
+            <input type="tel" id="customer-phone" name="customerPhone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br>
+            <small>Format: 123-456-7890</small>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Request &amp; Pre-Order Details</legend>
+          <p>
+            <label for="request-type">Request Type (Required):</label><br>
+            <select id="request-type" name="requestType" required>
+              <option value="">-- Please select an option --</option>
+              <option value="preorder">Bakery Pre-Order (Breads &amp; Pastries)</option>
+              <option value="cake-order">Custom Celebration Cake Order</option>
+              <option value="event-catering">Event Catering Inquiry</option>
+              <option value="general-question">General Question or Feedback</option>
+            </select>
+          </p>
+          <p>
+            <label for="pickup-date">Requested Pickup Date (Required for orders):</label><br>
+            <input type="date" id="pickup-date" name="pickupDate" required min="2026-10-28">
+          </p>
+          <p>
+            <label for="pickup-window">Preferred Pickup Window:</label><br>
+            <select id="pickup-window" name="pickupWindow">
+              <option value="morning">Morning (7:00 AM &ndash; 10:00 AM)</option>
+              <option value="midday">Midday (10:00 AM &ndash; 1:00 PM)</option>
+              <option value="afternoon">Afternoon (1:00 PM &ndash; 3:00 PM)</option>
+            </select>
+          </p>
+          <p>
+            <label for="item-details">Item Details &amp; Quantities (Required):</label><br>
+            <textarea id="item-details" name="itemDetails" rows="4" cols="45" required placeholder="Please list the loaves, pastries, or cake types and quantities you would like to order (e.g., 2 North Star Country Sourdough loaves, 4 Butter Croissants)..."></textarea>
+          </p>
+          <p>
+            <label for="allergy-notes">Allergy Notes &amp; Dietary Accommodations (If applicable):</label><br>
+            <textarea id="allergy-notes" name="allergyNotes" rows="3" cols="45" placeholder="Let us know if anyone in your party has allergies to nuts, dairy, seeds, or other dietary considerations..."></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Submit Request</button>
+        </p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Location Information &amp; Hours of Operation</h2>
+      <p>We welcome you to visit our neighborhood storefront for walk-in purchases, warm conversation, and fresh bread aromas.</p>
+      <ul>
+        <li><strong>Physical Address:</strong> 104 North Star Way, Portland, ME 04101</li>
+        <li><strong>Telephone:</strong> (207) 555-0192</li>
+        <li><strong>Customer Email:</strong> orders@northstarbakery.com</li>
+        <li><strong>Tuesday &ndash; Sunday:</strong> 7:00 AM &ndash; 3:00 PM</li>
+        <li><strong>Monday:</strong> Closed for deep cleaning and sourdough starter care</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <section>
+      <h2>Storefront Details</h2>
+      <p>North Star Bakery &bull; 104 North Star Way, Portland, ME 04101 &bull; Phone: (207) 555-0192</p>
+      <p>Baking fresh Tuesday through Sunday from 7:00 AM to 3:00 PM.</p>
+    </section>
+    <p>&copy; 2026 North Star Bakery. All rights reserved. Handcrafted with local grains and community love.</p>
+  </footer>
+</body>
+</html>

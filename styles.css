@@ -1,0 +1,384 @@
+/* ==========================================================================
+   North Star Bakery - Main Stylesheet (Touchstone 3)
+   Client: North Star Bakery (Client A)
+   Tone: Warm, handmade, community-centered, artisanal
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & Color Palette (Limited 4-Color Palette + Neutrals)
+   - Primary Brand Color (Deep Hearth Crust): #4A2E18
+   - Secondary Accent (Golden Honey / Grain): #C88A3E
+   - Page Background (Warm Cream / Flour):   #FAF6F0
+   - Card / Panel Fill (Soft Linen Tint):    #FFFFFF
+   - Text Dark (High Contrast Deep Charcoal):#2C2523
+   - Text Muted:                             #5C534E
+   -------------------------------------------------------------------------- */
+:root {
+  --color-primary: #4A2E18;
+  --color-accent: #C88A3E;
+  --color-accent-hover: #A66E2B;
+  --color-bg: #FAF6F0;
+  --color-card: #FFFFFF;
+  --color-card-border: #EADBCE;
+  --color-text: #2C2523;
+  --color-text-muted: #5C534E;
+  
+  /* Typography: Strict 2 Font Families */
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-sm: 0 2px 6px rgba(74, 46, 24, 0.08);
+  --shadow-md: 0 6px 18px rgba(74, 46, 24, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Reset Styles (Mobile-First)
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover, a:focus {
+  color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography & Headings
+   -------------------------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.85rem;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: var(--spacing-lg);
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: var(--spacing-md);
+  color: var(--color-accent);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+ul {
+  margin-left: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Navigation (Mobile-First)
+   -------------------------------------------------------------------------- */
+header {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: var(--spacing-md) var(--spacing-sm);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+header img {
+  max-height: 85px;
+  margin: 0 auto var(--spacing-xs) auto;
+  background-color: #FFFFFF;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+}
+
+header p {
+  color: #F5ECE1;
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.5px;
+}
+
+nav {
+  margin-top: var(--spacing-sm);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+nav a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+nav a:hover, nav a:focus {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Main Content Layout & Section Cards
+   -------------------------------------------------------------------------- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-sm);
+}
+
+section {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+section img, section picture, section video {
+  margin: var(--spacing-md) auto;
+  box-shadow: var(--shadow-sm);
+}
+
+figure {
+  margin: var(--spacing-md) 0;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+figure img {
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
+  font-style: italic;
+  padding: 0 var(--spacing-xs);
+}
+
+audio {
+  width: 100%;
+  max-width: 500px;
+  margin: var(--spacing-sm) 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Form & Inputs Styling (Accessible & Clean)
+   -------------------------------------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+fieldset {
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  background-color: var(--color-bg);
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 0 var(--spacing-xs);
+  font-size: 1.1rem;
+}
+
+label {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: #FFFFFF;
+  border: 1px solid #C4B5A5;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(200, 138, 62, 0.25);
+}
+
+small {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+button[type="submit"] {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.85rem 1.8rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   7. Footer
+   -------------------------------------------------------------------------- */
+footer {
+  background-color: var(--color-primary);
+  color: #F5ECE1;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+  text-align: center;
+}
+
+footer section {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+footer h2 {
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+footer p {
+  color: #F5ECE1;
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive Media Queries (Tablet & Desktop: min-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Navigation switches to horizontal bar */
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+  }
+
+  main {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  /* Two-column feel for sections with media */
+  section {
+    padding: var(--spacing-lg);
+  }
+
+  /* Form button auto width on desktop */
+  button[type="submit"] {
+    width: auto;
+    min-width: 250px;
+  }
+}
